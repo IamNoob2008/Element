@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 
-class Join(commands.Cog, name="Events"):
+class join_leave(commands.Cog, name="Events"):
     def __init__(self,bot):
         self.bot = bot
 
@@ -28,5 +28,5 @@ class Join(commands.Cog, name="Events"):
         await channel.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(Join(bot))
-    print("Join file is loaded!")
+    bot.add_cog(join_leave(bot))
+    print("join_leave file is loaded!")
