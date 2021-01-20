@@ -2,7 +2,7 @@ import discord
 import random
 from discord.ext import commands
 
-class QnA(commands.Cog, name="Fun"):
+class qna(commands.Cog, name="Fun"):
     def __init__(self,bot):
         self.bot = bot
 
@@ -35,5 +35,5 @@ class QnA(commands.Cog, name="Fun"):
         await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(QnA(bot))
-    print("Luck file is loaded!")
+    bot.add_cog(qna(bot))
+    print("qna file is loaded!")
