@@ -19,8 +19,7 @@ async def change_status():
     await bot.change_presence(activity=discord.Game(next(status)))
 
 extensions=['Moderation.Clear',
-            'Moderation.Ban',
-            'Moderation.Kick',
+            'Moderation.kick_ban',
             'Moderation.Embed',
             'Server Event.join_leave',
             'Fun.Q&A',
