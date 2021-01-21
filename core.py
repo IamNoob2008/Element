@@ -2,10 +2,24 @@ import discord
 import sys
 import os
 import traceback
+import json
 from discord.ext import commands, tasks
 from itertools import cycle
 
-bot = commands.Bot(command_prefix='--')
+def get_prefix(bot, message):
+    if not message.guild:
+        return commands.when_mentioned_or("--")(bot, message)
+
+    with open("prefixes.json", "r") as f:
+        prefixes = json.load(f)
+
+    if str(message.guild.id) not in prefixes:
+        return commands.when_mentioned_or("--")(bot, message)
+
+    prefix = prefixes[str(message.guild.id)]
+    return commands.when_mentioned_or(prefix)(bot, message)
+
+bot = commands.Bot(command_prefix=get_prefix)
 bot.remove_command('help')
 status = cycle(["--help", "Discord Server, RSGameTech's Official", "https://discord.gg/7GQkt7s6Xx"])
 
@@ -27,6 +41,7 @@ extensions=['Moderation.Clear',
             'Fun.Meme',
             'BOT Info.Help',
             'BOT Info.Ping',
+            'BOT Info.prefix',
             'Extras.Chat'
 ]
 if __name__ == '__main__':
