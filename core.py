@@ -37,11 +37,11 @@ extensions=['Moderation.Clear',
             'Moderation.Embed',
             'Server Event.join_leave',
             'Fun.qna',
-            'Fun.Avatar',
             'Fun.Meme',
-            'BOT Info.Help',
-            'BOT Info.Ping',
-            'Settings.prefix',
+            'Utility.avatar',
+            'Utility.Help',
+            'Utility.ping',
+            'Utility.prefix',
             'Extras.Chat'
 ]
 if __name__ == '__main__':
