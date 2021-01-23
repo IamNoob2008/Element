@@ -13,7 +13,7 @@ class Help(commands.Cog, name="BOT Info"):
             color=discord.Color.green()
         )
         embed.set_author(name=ctx.member.name, icon_url=ctx.author.avatar_url)
-        embed.set_field(name="Invite Element", value=f"[Invite](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
+        embed.add_field(name="Invite Element", value=f"[Invite](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
         await ctx.send(embed=embed)
 
 def setup(bot):
