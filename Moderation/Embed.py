@@ -8,13 +8,11 @@ class Embed(commands.Cog, name="Moderation"):
     @commands.command()
     @commands.has_permissions(manage_messages=True)
     async def embed(self, ctx, title: str, *, description: str, message = None):
-        message = message 
         embed = discord.Embed(
             title=f"{title}",
             description=f"{description}",
             color=0xFFFF00
         )
-        await ctx.message.delete()
         await ctx.send(embed=embed)
 
     @embed.error
