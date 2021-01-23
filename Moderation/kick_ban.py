@@ -57,7 +57,13 @@ class kick_ban(commands.Cog, name="Moderation"):
         elif isinstance(error, commands.MemberNotFound):
             await ctx.send("```Member not found in this server```")
         elif isinstance(error, commands.MissingPermissions):
-            await ctx.send(f"```{ctx.author.mention}, you don't have the Ban Member permission!```")
+            embed = discord.Embed(
+                title="Ban News",
+                description=f"{ctx.author.mention}, you don't have the Ban Member permission!",
+                color=0xFF0000
+            )
+            embed.set_footer(text=f"<:DiscordBOT:801303572183777280>[Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
+            await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(kick_ban(bot))
