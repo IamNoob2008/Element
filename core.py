@@ -21,7 +21,7 @@ def get_prefix(bot, message):
 
 bot = commands.Bot(command_prefix=get_prefix)
 bot.remove_command('help')
-status = cycle([f"{get_prefix}help", "Discord Server, RSGameTech's Official"])
+status = cycle([f"--help", "Discord Server, RSGameTech's Official"])
 
 @bot.event
 async def on_ready():
