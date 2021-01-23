@@ -18,7 +18,8 @@ class Avatar(commands.Cog, name="Fun"):
     @commands.command()
     async def server_av(self, ctx):
         embed = discord.Embed()
-        embed.add_field(name=guild.name,value=f"[Download]({guild.icon_url})")
+        embed.add_field(name=ctx.guild.name,value=f"[Download]({ctx.guild.icon_url})")
+        embed.set_image(url=ctx.guild.icon)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
