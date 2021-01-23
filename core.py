@@ -39,7 +39,7 @@ extensions=['Moderation.Clear',
             'Fun.qna',
             'Fun.Meme',
             'Utility.avatar',
-            'Utility.Help',
+            'Utility.help',
             'Utility.ping',
             'Utility.prefix',
             'Extras.Chat'

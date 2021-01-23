@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class Help(commands.Cog, name="BOT Info"):
+class help(commands.Cog, name="BOT Info"):
     def __init__(self,bot):
         self.bot = bot
 
@@ -14,5 +14,5 @@ class Help(commands.Cog, name="BOT Info"):
         await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(Help(bot))
-    print("Help file is loaded!")
+    bot.add_cog(help(bot))
+    print("help file is loaded!")
