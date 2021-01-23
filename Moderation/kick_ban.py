@@ -17,6 +17,7 @@ class kick_ban(commands.Cog, name="Moderation"):
             description=f"{member.name} has successfully kicked for {reason}",
             color=discord.Color.red()
         )
+        embed.set_footer(text=f"<:DiscordBOT:801303572183777280>[Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
         await ctx.send(embed=embed)
 
     @kick.error
@@ -40,6 +41,7 @@ class kick_ban(commands.Cog, name="Moderation"):
             description=f"{member.name} has successfully banned for {reason}",
             color=discord.Color.red()
         )
+        embed.set_footer(text=f"<:DiscordBOT:801303572183777280>[Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
         await ctx.send(embed=embed)
 
     @ban.error
