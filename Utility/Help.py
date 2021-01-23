@@ -7,12 +7,10 @@ class Help(commands.Cog, name="BOT Info"):
 
     @commands.command()
     async def help(self, ctx):
-        embed = discord.Embed(
-            title="Help",
-            description=f"[Help](https://rsgametech.gitbook.io/element/)",
-            color=discord.Color.green()
-        )
-        embed.add_field(name="Invite Element", value=f"[Invite](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
+        embed = discord.Embed(color=0x00FF00)
+        embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+        embed.add_field(name="Full BOT Guide", value=f"[Help](https://rsgametech.gitbook.io/element/)")
+        embed.add_field(name="BOT Info", value=f"[Invite](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
         await ctx.send(embed=embed)
 
 def setup(bot):
