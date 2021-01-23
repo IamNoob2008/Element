@@ -15,13 +15,12 @@ class Meme(commands.Cog, name="Moderation"):
         downs = res['downs']
         sub = res['subreddit']
         author = res['author']
-        time = res['createdUtc']
         embed = discord.Embed(
             title = f"{title}\nAuthor: {author}\nSubreddit: {sub}",
             color=0xADD8E6
         )
         embed.set_image(url = res['image'])
-        embed.set_footer(text=f"👍: {ups}, 👎: {downs}, 🕑: {time}")
+        embed.set_footer(text=f"👍: {ups}, 👎: {downs}")
         await ctx.send(embed=embed)
 
 def setup(bot):
