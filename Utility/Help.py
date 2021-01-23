@@ -9,7 +9,7 @@ class Help(commands.Cog, name="BOT Info"):
     async def help(self, ctx):
         embed = discord.Embed(
             title="Help",
-            description=f"[Help](https://rsgametech.gitbook.io/element/)"
+            description=f"[Help](https://rsgametech.gitbook.io/element/)",
             color=discord.Color.green()
         )
         embed.set_field(name="Invite Element", value=f"[Invite](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
