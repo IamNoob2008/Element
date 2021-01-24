@@ -7,7 +7,7 @@ class Embed(commands.Cog, name="Moderation"):
 
     @commands.command()
     @commands.has_permissions(manage_messages=True)
-    async def embed(self, ctx, title: str, *, description: str, message = None):
+    async def embed(self, ctx, title: str = None, *, description: str = None, message = None):
         embed = discord.Embed(
             title=f"{title}",
             description=f"{description}",

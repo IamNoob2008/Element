@@ -32,6 +32,7 @@ class qna(commands.Cog, name="Fun"):
             title="Q&A",
             description=f"Question: {question}\nAnswer: {random.choice(response)}"
         )
+        embed.add_field(name="ㅤ",value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
         await ctx.send(embed=embed)
 
 def setup(bot):
