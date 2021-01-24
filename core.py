@@ -41,8 +41,8 @@ extensions=['Moderation.Clear',
             'Fun.f',
             'Utility.avatar',
             'Utility.help',
-            'Utility.ping',
             'Utility.prefix',
+            'Utility.botinfo',
             'Extras.Chat'
 ]
 if __name__ == '__main__':
