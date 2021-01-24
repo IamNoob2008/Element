@@ -2,7 +2,7 @@ import discord
 import requests
 from discord.ext import commands
 
-class Meme(commands.Cog, name="Moderation"):
+class Meme(commands.Cog, name="Fun"):
     def __init__(self,bot):
         self.bot = bot
 
