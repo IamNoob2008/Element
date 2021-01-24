@@ -13,6 +13,7 @@ class botinfo(commands.Cog, name="Utility"):
             color=0x134F5C
         )
         embed.set_image(url=ctx.guild.icon_url)
+        embed.add_field(name="Total Server Joined", value=f"```{ctx.guild.joined}```")
         embed.add_field(name="Bot Latency", value=f"```{round(self.bot.latency * 1000)}ms```")
         embed.set_footer(text=f"Requested by {ctx.author.name}")
         await ctx.send(embed=embed)
