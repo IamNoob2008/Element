@@ -18,6 +18,19 @@ class botinfo(commands.Cog, name="Utility"):
         embed.set_footer(text=f"Requested by {ctx.author.name}")
         await ctx.send(embed=embed)
 
+    @commands.command()
+    async def serverinfo(self, ctx):
+        embed = discord.Embed(
+            title=f"Server Info",
+            color=0x134F5C
+        )
+        embed.set_image(url=ctx.guild.icon_url)
+        embed.add_field(name="Owner", value=f"{guild.author.name}")
+        #embed.add_field(name="Total Member", value=f"")
+        embed.add_field(name="BOT Latency", value=f"```{round(self.bot.latency * 1000)}ms```")
+        embed.set_footer(text=f"Requested by {ctx.author.name}")
+        await ctx.send(embed=embed)
+
 def setup(bot):
     bot.add_cog(botinfo(bot))
     print("botinfo file is loaded!")
