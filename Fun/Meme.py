@@ -1,4 +1,5 @@
 import discord
+import os
 import requests
 from discord.ext import commands
 
@@ -8,7 +9,7 @@ class Meme(commands.Cog, name="Fun"):
 
     @commands.command()
     async def meme(self, ctx):
-        r = requests.get('https://memes.blademaker.tv/api/memes')
+        r = requests.get(os.getenv('Meme'))
         res = r.json()
         title = res['title']
         ups = res['ups']
