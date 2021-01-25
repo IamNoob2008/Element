@@ -55,4 +55,4 @@ if __name__ == '__main__':
             print(f"Error loading {extension}", file=sys.stderr)
             traceback.print_exc()
 
-bot.run('NzkwODMyMjYzMjYwMDEyNTcz.X-GV8A.c-BuXXqCoBSsiH9w9cB6SMr4IXA')
+bot.run(os.getenv('Token'))
