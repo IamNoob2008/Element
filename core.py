@@ -19,8 +19,8 @@ def get_prefix(bot, message):
     prefix = prefixes[str(message.guild.id)]
     return commands.when_mentioned_or(prefix)(bot, message)
 
-intents = discord.Intents.all()  # All but the two privileged ones
-intents.members = True  # Subscribe to the Members intent
+intents = discord.Intents.all()
+intents.members = True
 bot = commands.Bot(command_prefix=get_prefix, intents=intents)
 bot.remove_command('help')
 status = cycle([f"--help", "Discord Server, RSGameTech's Official"])
