@@ -26,7 +26,7 @@ intents = discord.Intents.all()
 intents.members = True
 bot = commands.Bot(command_prefix=get_prefix, intents=intents)
 bot.remove_command('help')
-status = cycle([f"--help", "Discord Server, RSGameTech's Official"])
+status = cycle(["--help", "Discord Server, RSGameTech's Official"])
 
 
 @bot.event
