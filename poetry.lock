@@ -68,6 +68,14 @@ version = "1.0.1"
 
 [[package]]
 category = "main"
+description = "A package allowing you to display interactive help in Discord easily"
+name = "discord-interactive"
+optional = false
+python-versions = "*"
+version = "4.0"
+
+[[package]]
+category = "main"
 description = "A Python wrapper for the Discord API"
 name = "discord.py"
 optional = false
@@ -179,7 +187,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "67179e68f36674eb3800ba17a69b0effefe435e61bc749fad79640b809325a2e"
+content-hash = "b3e8e210f41070ff8bb6b06f857440ac5c5081973f8e59aed82d2eac9953f2c9"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -241,6 +249,9 @@ click = [
 discord = [
     {file = "discord-1.0.1-py3-none-any.whl", hash = "sha256:9d4debb4a37845543bd4b92cb195bc53a302797333e768e70344222857ff1559"},
     {file = "discord-1.0.1.tar.gz", hash = "sha256:ff6653655e342e7721dfb3f10421345fd852c2a33f2cca912b1c39b3778a9429"},
+]
+discord-interactive = [
+    {file = "discord_interactive-4.0.tar.gz", hash = "sha256:5a307b3fb9801a1b4479482010c62b0cb14c87964cb3c6a1a52fee7d162d0bad"},
 ]
 "discord.py" = [
     {file = "discord.py-1.6.0-py3-none-any.whl", hash = "sha256:3df148daf6fbcc7ab5b11042368a3cd5f7b730b62f09fb5d3cbceff59bcfbb12"},
