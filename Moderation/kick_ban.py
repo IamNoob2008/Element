@@ -1,23 +1,27 @@
 import discord
 from discord.ext import commands
 
+
 class kick_ban(commands.Cog, name="Moderation"):
-    def __init__(self,bot):
+    def __init__(self, bot):
         self.bot = bot
 
     #Kick
 
     @commands.command()
     @commands.has_permissions(kick_members=True)
-    async def kick(self, ctx, member : discord.Member, *, reason=None):
+    async def kick(self, ctx, member: discord.Member, *, reason=None):
         await member.kick(reason=reason)
         await ctx.channel.purge(limit=1)
         embed = discord.Embed(
             title="Kick News",
             description=f"{member.name} has successfully kicked for {reason}",
-            color=discord.Color.red()
+            color=discord.Color.red())
+        embed.add_field(
+            name="ㅤ",
+            value=
+            f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)"
         )
-        embed.add_field(name="ㅤ",value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
         await ctx.send(embed=embed)
 
     @kick.error
@@ -29,25 +33,32 @@ class kick_ban(commands.Cog, name="Moderation"):
         elif isinstance(error, commands.MissingPermissions):
             KE = discord.Embed(
                 title="Kick News",
-                description=f"{ctx.author.mention}, you don't have the Kick Member permission!",
-                color=0xFF0000
+                description=
+                f"{ctx.author.mention}, you don't have the Kick Member permission!",
+                color=0xFF0000)
+            KE.add_field(
+                name="ㅤ",
+                value=
+                f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)"
             )
-            KE.add_field(name="ㅤ",value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
             await ctx.send(embed=KE)
 
     #Ban
 
     @commands.command()
     @commands.has_permissions(ban_members=True)
-    async def ban(self, ctx, member : discord.Member, *, reason=None):
+    async def ban(self, ctx, member: discord.Member, *, reason=None):
         await member.ban(reason=reason)
         await ctx.channel.purge(limit=1)
         embed = discord.Embed(
             title="Ban News",
             description=f"{member.name} has successfully banned for {reason}",
-            color=discord.Color.red()
+            color=discord.Color.red())
+        embed.add_field(
+            name="ㅤ",
+            value=
+            f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)"
         )
-        embed.add_field(name="ㅤ",value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
         await ctx.send(embed=embed)
 
     @ban.error
@@ -59,11 +70,16 @@ class kick_ban(commands.Cog, name="Moderation"):
         elif isinstance(error, commands.MissingPermissions):
             BE = discord.Embed(
                 title="Ban News",
-                description=f"{ctx.author.mention}, you don't have the Ban Member permission!",
-                color=0xFF0000
+                description=
+                f"{ctx.author.mention}, you don't have the Ban Member permission!",
+                color=0xFF0000)
+            BE.add_field(
+                name="ㅤ",
+                value=
+                f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)"
             )
-            BE.add_field(name="ㅤ",value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
             await ctx.send(embed=BE)
+
 
 def setup(bot):
     bot.add_cog(kick_ban(bot))

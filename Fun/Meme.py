@@ -3,8 +3,9 @@ import os
 import requests
 from discord.ext import commands
 
+
 class Meme(commands.Cog, name="Fun"):
-    def __init__(self,bot):
+    def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
@@ -17,12 +18,12 @@ class Meme(commands.Cog, name="Fun"):
         sub = res['subreddit']
         author = res['author']
         embed = discord.Embed(
-            title = f"{title}\nAuthor: {author}\nSubreddit: {sub}",
-            color=0xADD8E6
-        )
-        embed.set_image(url = res['image'])
+            title=f"{title}\nAuthor: {author}\nSubreddit: {sub}",
+            color=0xADD8E6)
+        embed.set_image(url=res['image'])
         embed.set_footer(text=f"👍: {ups}, 👎: {downs}")
         await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Meme(bot))
