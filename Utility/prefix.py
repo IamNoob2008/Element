@@ -2,7 +2,7 @@ import discord
 import json
 from discord.ext import commands
 
-class prefix(commands.Cog, name="Fun"):
+class prefix(commands.Cog, name="Settings"):
     def __init__(self,bot):
         self.bot = bot
 

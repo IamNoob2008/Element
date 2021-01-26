@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class Avatar(commands.Cog, name="Fun"):
+class Avatar(commands.Cog, name="Utility"):
     def __init__(self,bot):
         self.bot = bot
 
