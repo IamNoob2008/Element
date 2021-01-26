@@ -9,7 +9,7 @@ class Clear(commands.Cog, name="Moderation"):
   @commands.has_permissions(manage_messages=True)
   async def clear(self, ctx, amount: int):
 		embed = discord.Embed(
-			title="Clear News",
+			title="Clear News"
 			description=f"Message has been succesfully clear",
 			color=0xE67E22
 		)
