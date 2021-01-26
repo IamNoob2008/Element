@@ -54,11 +54,7 @@ class kick_ban(commands.Cog, name="Moderation"):
             title="Ban News",
             description=f"{member.name} has successfully banned for {reason}",
             color=discord.Color.red())
-        embed.add_field(
-            name="ㅤ",
-            value=
-            f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)"
-        )
+        embed.add_field(name="ㅤ",value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
         await ctx.send(embed=embed)
 
     @ban.error
@@ -73,13 +69,8 @@ class kick_ban(commands.Cog, name="Moderation"):
                 description=
                 f"{ctx.author.mention}, you don't have the Ban Member permission!",
                 color=0xFF0000)
-            BE.add_field(
-                name="ㅤ",
-                value=
-                f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)"
-            )
+            BE.add_field(name="ㅤ",value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
             await ctx.send(embed=BE)
-
 
 def setup(bot):
     bot.add_cog(kick_ban(bot))
