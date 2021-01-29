@@ -32,23 +32,20 @@ class botinfo(commands.Cog, name="Utility"):
         await ctx.send(embed=embed)
 
     @commands.command()
-    async def ui(self, ctx ,user: discord.Member = None):
+    async def ui(self, ctx , *,user: discord.Member = None):
         if user is None:
-            sui= discord.Embed(
-                title="User Information",
-                color=0x134F5C
-            )
-            sui.set_thumbnail(url=ctx.author.avatar_url)
-            sui.add_field(name="Name",value=f"{ctx.author.name}")
-            sui.add_field(name="ID",value=f"{ctx.author.id}")
-            sui.add_field(name="Status",value=f"{ctx.author.status}")
-            sui.add_field(name="Created At",value=f"{ctx.author.created_at.strftime("%d/%m/%Y %H:%M:%S")}")
-            sui.add_field(name="ㅤ", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)",inline=False)
-        else:
-            oui= discord.Embed(
-                title="User Information",
-                color=0x134F5C
-            )
+            user = ctx.message.author
+        embed = discord.Embed(
+            title="User Information",
+            color=0x134F5C
+        )
+        embed.set_thumbnail(url=ctx.author.avatar_url)
+        embed.add_field(name="Name",value=f"{ctx.author.name}")
+        embed.add_field(name="ID",value=f"{ctx.author.id}")
+        embed.add_field(name="Status",value=f"{ctx.author.status}")
+        embed.add_field(name="Created At",value=f"{ctx.author.created_at.strftime("%d/%m/%Y %H:%M:%S")}")
+        embed.add_field(name="ㅤ", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)",inline=False)
+        await ctx.send(embed=embed)
 
 
 def setup(bot):
