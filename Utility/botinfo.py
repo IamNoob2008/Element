@@ -43,6 +43,7 @@ class botinfo(commands.Cog, name="Utility"):
         embed.add_field(name="Name",value=f"{ctx.author.name}")
         embed.add_field(name="ID",value=f"{ctx.author.id}")
         embed.add_field(name="Status",value=f"{ctx.author.status}")
+        #embed.add_field(name="Activity",value=f"{ctx.author.activity}")
         embed.add_field(name="Created At",value=f"{ctx.author.created_at.strftime("%d/%m/%Y %H:%M:%S")}")
         embed.add_field(name="ㅤ", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)",inline=False)
         await ctx.send(embed=embed)
