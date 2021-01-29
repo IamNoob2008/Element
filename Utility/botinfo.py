@@ -31,6 +31,20 @@ class botinfo(commands.Cog, name="Utility"):
         embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
+    @commands.command()
+    async def ui(self, ctx ,user: discord.Member = None):
+        if user is None:
+            sui= discord.Embed(
+                title="User Information",
+                color=0x134F5C
+            )
+            sui.set_thumbnail(url=ctx.author.avatar_url)
+            sui.add_field(name="Name",value=f"{ctx.author.name}")
+            sui.add_field(name="Nickname",value=f"{ctx.author.nickname}")
+            sui.add_field(name="ID",value=f"{ctx.author.id}")
+            sui.add_field(name="Created At",value=f"{ctx.author.created}")
+            sui.add_field(name="ㅤ", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)",inline=False)
+
 
 def setup(bot):
     bot.add_cog(botinfo(bot))
