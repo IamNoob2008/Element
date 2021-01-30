@@ -47,11 +47,11 @@ class info(commands.Cog, name="Utility"):
             title="User Information",
             color=0x134F5C
         )
-        embed.set_thumbnail(url=ctx.author.avatar_url)
+        embed.set_thumbnail(url=user.avatar_url)
         fields = [("Name",str(user.name),True),
         ("ID",user.id,True),
         ("Status",str(user.status).capitalize(),True),
-        ("Activity",str(user.activity.type).split(".")[-1],True),
+        ("Activity",str(user.activity).split(".")[-1],True),
         ("Created At",user.created_at.strftime("%d/%m/%Y %H:%M:%S"),True),
         ("Joined At",user.joined_at.strftime("%d/%m/%Y %H:%M:%S"),True),
         ("ㅤ",f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)",False)]
