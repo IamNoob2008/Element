@@ -50,7 +50,7 @@ class info(commands.Cog, name="Utility"):
         embed.set_thumbnail(url=ctx.author.avatar_url)
         fields = [("Name",str(user.name),True),
         ("ID",user.id,True),
-        ("Status",str(user.status),True),
+        ("Status",str(user.status).capitalize(),True),
         ("Activity",str(user.activity),True),
         ("Created At",user.created_at.strftime("%d/%m/%Y %H:%M:%S"),True),
         ("Joined At",user.joined_at.strftime("%d/%m/%Y %H:%M:%S"),True),
