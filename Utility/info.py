@@ -26,8 +26,7 @@ class info(commands.Cog, name="Utility"):
         fields = [("Owner",ctx.guild.owner,True),
         ("Total Member",ctx.guild.member_count,True),
         ("Region",str(ctx.guild.region).capitalize(),True),
-        ("Bot Latency",round(self.bot.latency * 1000)}ms,True),
-        ("Created At",ctx.guild.created_at.strftime("%d/%m/%Y %H:%M:%S"),True)
+        ("Created At",ctx.guild.created_at.strftime("%d/%m/%Y %H:%M:%S"),True),
         ("ㅤ",f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)",False)]
         for name, value, inline in fields:
             embed.add_field(name=name,value=value,inline=inline)
