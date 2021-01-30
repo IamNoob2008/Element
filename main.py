@@ -50,7 +50,7 @@ extensions = ['Moderation.Clear',
 							'Utility.avatar',
 							'Utility.help',
 							'Utility.prefix',
-							'Utility.botinfo',
+							'Utility.info',
 							'Utility.ping'
 ]
 if __name__ == '__main__':
