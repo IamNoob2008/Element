@@ -10,7 +10,7 @@ class join_leave(commands.Cog, name="Events"):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         role = discord.utils.get(member.guild.role, name="Verified")
-        channel = self.bot.get_channel(797313459523682314)
+        channel = self.bot.get_channel(772856544193675285)
         embed = discord.Embed(
             title="Good News",
             description=
@@ -21,7 +21,7 @@ class join_leave(commands.Cog, name="Events"):
 
     @commands.Cog.listener()
     async def on_member_leave(self, member):
-        channel = self.bot.get_channel(799268264994799667)
+        channel = self.bot.get_channel(772856544193675285)
         embed = discord.Embed(
             title="Sad News",
             description=
