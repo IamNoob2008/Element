@@ -48,7 +48,7 @@ class info(commands.Cog, name="Utility"):
             color=0x134F5C
         )
         embed.set_thumbnail(url=user.avatar_url)
-        for activity in member.activities:
+        for activity in user.activities:
                     if isinstance(activity, Game):
                         name = activity.name
                         Type = "Playing"
