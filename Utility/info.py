@@ -49,28 +49,10 @@ class info(commands.Cog, name="Utility"):
         )
         embed.set_thumbnail(url=user.avatar_url)
         for activity in user.activities:
-                    if isinstance(activity, Game):
-                        name = activity.name
-                        Type = "Playing"
-                        Activity = f"{name}"
-                    elif isinstance(activity, Streaming):
-                        name2 = activity.name
-                        name3 = activity.platform
-                        Type = "Streaming"
-                        Activity = f"{name2} on {name3}"
-                    elif isinstance(activity, Spotify):
-                        name4 = activity.title
-                        name5 = activity.artists
-                        Type = "Listening to Spotify"
-                        Activity = f"**Song Name**:{name4}\n**Song Artists:**{name5}"
-                    elif isinstance(activity, CustomActivity):
+                    if isinstance(activity, CustomActivity):
                         name6 = activity.name
                         Type = "Custom Status"
                         Custom = f"{name6}"
-                    else:
-                        name7 = activity.name
-                        Type =  "Playing"
-                        Activity = f"{name7}"
         fields = [("Name",str(user.name),True),
         ("ID",user.id,True),
         ("Status",str(user.status).capitalize(),True),
