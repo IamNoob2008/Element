@@ -53,7 +53,7 @@ extensions = ['Moderation.Clear',
 							'Utility.info',
 							'Utility.ping',
               'Utility.ascii',
-              'Extras,Chat'
+              'Extras.Chat'
 ]
 if __name__ == '__main__':
   for extension in extensions:
