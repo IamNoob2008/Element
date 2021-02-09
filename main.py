@@ -52,7 +52,8 @@ extensions = ['Moderation.Clear',
 							'Utility.prefix',
 							'Utility.info',
 							'Utility.ping',
-              'Utility.ascii'
+              'Utility.ascii',
+              'Extras,Chat'
 ]
 if __name__ == '__main__':
   for extension in extensions:
