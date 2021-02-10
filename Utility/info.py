@@ -48,11 +48,6 @@ class info(commands.Cog, name="Utility"):
             color=0x134F5C
         )
         embed.set_thumbnail(url=user.avatar_url)
-        for activity in user.activities:
-                    if isinstance(activity, CustomActivity):
-                        name6 = activity.name
-                        Type = "Custom Status"
-                        Custom = f"{name6}"
         fields = [("Name",str(user.name),True),
         ("ID",user.id,True),
         ("Status",str(user.status).capitalize(),True),
