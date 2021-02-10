@@ -8,8 +8,10 @@ class ascii(commands.Cog, name="Utility"):
     @commands.command()
     async def source(self, ctx):
         embed = discord.Embed(
-            title=""
+            title="This BOT is open source"
+            description="Link given below\n[Click here](https://ritam0604.github.io/Element/)"
         )
+        embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
 def setup(bot):
