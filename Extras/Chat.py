@@ -17,7 +17,6 @@ class Chat(commands.Cog, name="Extras"):
         elif message.content == "dead chat":
             await message.channel.send(f"{message.author.mention}, if it is dead chat then why are you chatting here!")
 
-
 def setup(bot):
     bot.add_cog(Chat(bot))
     print("Chat file is loaded!")
