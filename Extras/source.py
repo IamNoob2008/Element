@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class ascii(commands.Cog, name="Utility"):
+class source(commands.Cog, name="Utility"):
     def __init__(self,bot):
         self.bot = bot
 
@@ -15,5 +15,5 @@ class ascii(commands.Cog, name="Utility"):
         await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(ascii(bot))
-    print("ascii file is loaded!")
+    bot.add_cog(source(bot))
+    print("source file is loaded!")
