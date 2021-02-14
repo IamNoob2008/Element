@@ -9,7 +9,7 @@ class ascii(commands.Cog, name="Utility"):
     async def source(self, ctx):
         embed = discord.Embed(
             title="This BOT is open source"
-            description=f"Link given below \n [Click here](https://ritam0604.github.io/Element/)"
+            description=f"[Click here](https://ritam0604.github.io/Element/)"
         )
         embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
