@@ -5,6 +5,7 @@ import traceback
 import json
 from discord.ext import commands, tasks
 from itertools import cycle
+from dotenv import load_dotenv
 from keep_alive import keep_alive
 
 
@@ -40,9 +41,7 @@ async def change_status():
   await bot.change_presence(activity=discord.Game(next(status)))
 
 
-extensions = ['Moderation.Clear',
-							'Moderation.kick_ban',
-							'Moderation.Embed',
+extensions = ['cogs.moderation',
 							'Server Event.join_leave',
 							'Fun.qna',
 							'Fun.Meme',
