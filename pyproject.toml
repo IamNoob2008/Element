@@ -10,6 +10,7 @@ discord = "^1.0.1"
 flask = "^1.1.2"
 discord-interactive = "^4.0"
 pyfiglet = "^0.8.post1"
+python-dotenv = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
 
