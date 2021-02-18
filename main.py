@@ -43,7 +43,7 @@ async def change_status():
 async def reload(ctx, cog=None):
   if not cog:
     #No cogs means Reload all the extension
-    async with channel.typing:
+    async with ctx.typing:
       embed = discord.Embed(
         title = "Reloading all Cogs!",
       )
