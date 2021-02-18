@@ -39,8 +39,8 @@ async def change_status():
 
 #Reloads
 
-@bot.command(name="reload")
-async def _reload(ctx, cog=None):
+@bot.command()
+async def reload(ctx, cog=None):
   if not cog:
     #No cogs means Reload all the extension
     async with ctx.typing:
