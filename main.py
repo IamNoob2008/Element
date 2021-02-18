@@ -37,23 +37,45 @@ async def on_ready():
 async def change_status():
   await bot.change_presence(activity=discord.Game(next(status)))
 
-@bot.command()
-@bot.is_owner()
-async def reload(ctx):
-  async with ctx.typing:
-    embed = discord.Embed(
-      title = "Reloading all Cogs!"
-    )
-    for ext in os.listdir("./cogs/"):
-      if ext.endswith(".py") and not ext.startswith("_"):
-        try:
-          bot.unload_extension(f"cogs.{ext[:-3]}")
-          bot.load_extension(f"cogs.{ext[:-3]}")
-          embed.add_field(name="Reloaded:- '{ext}'!",)
-        except Exception as e:
-          embed.add_field(name="Failed to reload:- '{ext}'",value=e)
-        await asyncio.sleep(0.5)
-    await ctx.send(embed=embed)
+#Reloads
+
+@bot.command(name="reload")
+async def _reload(ctx, cog=None):
+  if not cog:
+    #No cogs means Reload all the extension
+    async with ctx.typing:
+      embed = discord.Embed(
+        title = "Reloading all Cogs!",
+      )
+      for ext in os.listdir("./cogs/"):
+        if ext.endswith(".py") and not ext.startswith("_"):
+          try:
+            bot.unload_extension(f"cogs.{ext[:-3]}")
+            bot.load_extension(f"cogs.{ext[:-3]}")
+            embed.add_field(name="Reloaded:- `{ext}`!",value="\uFEFF",inline=False)
+          except Exception as e:
+            embed.add_field(name="Failed to reload:- `{ext}`",value=e)
+          await asyncio.sleep(0.5)
+      await ctx.send(embed=embed)
+  else:
+    #Reloads a specific extension
+    async with ctx.typing:
+      embed = discord.Embed(
+        title = "Reloading Cogs!",
+      )
+      ext=f"{cog.lower()}.py"
+      if not os.path.exists(f"./cogs/{ext}"):
+          # if the file does not exist
+          embed.add_field(name=f"Failed to reload:- `{ext}`",value="This cog does not exist.",inline=False)
+      elif ext.endswith(".py") and not ext.startswith("_"):
+          try:
+              bot.unload_extension(f"cogs.{ext[:-3]}")
+              bot.load_extension(f"cogs.{ext[:-3]}")
+              embed.add_field(name=f"Reloaded: `{ext}`",value='\uFEFF',inline=False)
+          except Exception:
+              desired_trace = traceback.format_exc()
+              embed.add_field(name=f"Failed to reload: `{ext}`",value=desired_trace,inline=False)
+      await ctx.send(embed=embed)
 
 extensions = ['cogs.moderation',
               'cogs.fun',
