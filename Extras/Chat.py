@@ -16,6 +16,8 @@ class Chat(commands.Cog, name="Extras"):
             await message.channel.send(f"Hi {message.author.name}, welcome to the chat!")
         elif message.content == "dead chat":
             await message.channel.send(f"{message.author.name}, if it is dead chat then why are you chatting here!")
+        elif message.contains("@RSGameTech#9977"):
+            await message.channel.send(f":expressionless:")
 
 def setup(bot):
     bot.add_cog(Chat(bot))
