@@ -3,6 +3,7 @@ import sys
 import os
 import traceback
 import json
+import jishaku
 from discord.ext import commands, tasks
 from itertools import cycle
 from dotenv import load_dotenv
@@ -57,4 +58,5 @@ if __name__ == '__main__':
       traceback.print_exc()
 
 keep_alive()
+bot.load_extension("jishaku")
 bot.run(os.getenv('TOKEN'))
