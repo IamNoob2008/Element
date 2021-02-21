@@ -8,7 +8,7 @@ class ping(commands.Cog, name="Utility"):
 
 	@commands.command()
 	async def ping(self, ctx):
-		msg = await ctx.send("Pinging <a:WindowsDotLoading:809471466311516211>")
+		msg = "Pinging <a:WindowsDotLoading:809471466311516211>"
 		await ctx.send(msg)
 		await asyncio.sleep(5)
 		embed = discord.Embed(title="Pong!",description=f"Your latency is {round(self.bot.latency * 1000)}ms",color=0x00FF00)
