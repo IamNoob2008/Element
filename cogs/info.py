@@ -1,9 +1,11 @@
 import discord
 from discord.ext import commands
 
-class info(commands.Cog, name="Utility"):
+class info(commands.Cog, name="Info"):
     def __init__(self, bot):
         self.bot = bot
+
+    #BOT Info
 
     @commands.command(description="Shows you the information about a bot.")
     async def bi(self, ctx):
@@ -25,6 +27,8 @@ class info(commands.Cog, name="Utility"):
         embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
+    #Server Info
+
     @commands.command(description="Shows you the information about the current server.")
     async def si(self, ctx):
         embed = discord.Embed(title=f"Server Info",color=ctx.guild.owner.colour)
@@ -38,6 +42,8 @@ class info(commands.Cog, name="Utility"):
             embed.add_field(name=name,value=value,inline=inline)
         embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
+
+    #User Info
 
     @commands.command(description="Shows you the information of a user in current server")
     async def ui(self, ctx , *,user: discord.Member = None):
@@ -62,4 +68,4 @@ class info(commands.Cog, name="Utility"):
 
 def setup(bot):
     bot.add_cog(info(bot))
-    print("info file is loaded!")
+    print("Info file is loaded!")

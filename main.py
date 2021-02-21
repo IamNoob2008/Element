@@ -41,9 +41,9 @@ async def change_status():
 extensions = ['cogs.moderation',
               'cogs.fun',
 							'cogs.event',
+              'cogs.info',
 							'Utility.avatar',
 							'Utility.prefix',
-							'Utility.info',
 							'Utility.ping',
               'Extras.Chat',
               'Extras.source'
