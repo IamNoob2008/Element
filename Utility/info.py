@@ -5,7 +5,7 @@ class info(commands.Cog, name="Utility"):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
+    @commands.command(description="Shows you the information about a bot.")
     async def bi(self, ctx):
         embed = discord.Embed(
             title=f"<:ElementLogo:802919295755223060> Element BOT Info",
@@ -25,7 +25,7 @@ class info(commands.Cog, name="Utility"):
         embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
-    @commands.command()
+    @commands.command(description="Shows you the information about the current server.")
     async def si(self, ctx):
         embed = discord.Embed(title=f"Server Info",color=ctx.guild.owner.colour)
         embed.set_thumbnail(url=ctx.guild.icon_url)
@@ -39,7 +39,7 @@ class info(commands.Cog, name="Utility"):
         embed.set_footer(text=f"Requested by {ctx.author.name}",icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
-    @commands.command()
+    @commands.command(description="Shows you the information of a user in current server")
     async def ui(self, ctx , *,user: discord.Member = None):
         if user is None:
             user = ctx.author
