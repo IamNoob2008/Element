@@ -6,6 +6,7 @@ import json
 import jishaku
 from discord.ext import commands, tasks
 from itertools import cycle
+from pretty_help import PrettyHelp
 from dotenv import load_dotenv
 from keep_alive import keep_alive
 
@@ -24,8 +25,8 @@ def get_prefix(bot, message):
 
 intents = discord.Intents.all()
 intents.members = True
-bot = commands.Bot(command_prefix=get_prefix, intents=intents)
-bot.remove_command('help')
+bot = commands.Bot(command_prefix=get_prefix, intents=intents, help_command=PrettyHelp())
+#bot.remove_command('help')
 status = cycle(["--help", "Discord Server, RSGameTech's Official"])
 
 @bot.event
@@ -41,7 +42,6 @@ extensions = ['cogs.moderation',
               'cogs.fun',
 							'cogs.event',
 							'Utility.avatar',
-							'cogs.help',
 							'Utility.prefix',
 							'Utility.info',
 							'Utility.ping',

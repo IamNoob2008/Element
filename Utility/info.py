@@ -15,7 +15,7 @@ class info(commands.Cog, name="Utility"):
         embed.set_image(url=ctx.guild.icon_url)
         fields = [("Bot Latency",f"{round(self.bot.latency* 1000)}ms",True),
         ("Created By","RSGameTech#9977",True),
-        ("Bot Version","V0.3 (Beta)",True),
+        ("Bot Version","V0.4 (Beta)",True),
         ("Language Using","Python",True),
         ("Total Server Joined","....",True),
         ("Total User Useing","....",True),

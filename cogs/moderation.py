@@ -7,7 +7,7 @@ class moderation(commands.Cog, name="Moderation"):
 
     #Kick
 
-    @commands.command()
+    @commands.command(description="This command is used to kick the members from the current server.")
     @commands.has_permissions(kick_members=True)
     async def kick(self, ctx, member: discord.Member, *, reason=None):
         await member.kick(reason=reason)
@@ -37,7 +37,7 @@ class moderation(commands.Cog, name="Moderation"):
 
     #Ban
 
-    @commands.command()
+    @commands.command(description="This command is used to ban the members from the current server.")
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason=None):
         await member.ban(reason=reason)
@@ -66,7 +66,7 @@ class moderation(commands.Cog, name="Moderation"):
 
     #Clear
 
-    @commands.command()
+    @commands.command(description="This command is used to clear the number of message from the current channel.")
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx, amount: int):
         embed = discord.Embed(
