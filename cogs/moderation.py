@@ -74,7 +74,7 @@ class moderation(commands.Cog, name="Moderation"):
             description="Message has been succesfully clear",
             color=0xE67E22
         )
-        embed.add_field(name="ㅤ", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
+        embed.add_field(name="Links", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot) | <:supporter:775594205186883585>: [Support Server](https://discord.gg/PKP4mG6E3G)", inline=False)
         await ctx.channel.purge(limit=amount + 1)
         await ctx.send(embed=embed)
 
@@ -82,11 +82,11 @@ class moderation(commands.Cog, name="Moderation"):
     async def clear_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             EN = discord.Embed(description=f"{ctx.author.mention}, you have to  specify the amount of message to delete.")
-            EN.add_field(name="Links", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)|<:supporter:775594205186883585>: [Support Server](https://discord.gg/PKP4mG6E3G)", inline=False)
+            EN.add_field(name="Links", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot) | <:supporter:775594205186883585>: [Support Server](https://discord.gg/PKP4mG6E3G)", inline=False)
             await ctx.send(embed=EN)
         elif isinstance(error, commands.MissingPermissions):
             EP = discord.Embed(description=f"{ctx.author.mention}, you don't have the 'Manage Message' permision to use this command.")
-            EP.add_field(name="Links", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)|<:supporter:775594205186883585>: [Support Server](https://discord.gg/PKP4mG6E3G)", inline=False)
+            EP.add_field(name="Links", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot) | <:supporter:775594205186883585>: [Support Server](https://discord.gg/PKP4mG6E3G)", inline=False)
             await ctx.send(embed=EP)
 
     #Embed
