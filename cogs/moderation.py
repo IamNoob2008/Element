@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from jishaku.cog import Jishaku
 
 class moderation(commands.Cog, name="Moderation"):
     def __init__(self, bot):
@@ -106,10 +105,6 @@ class moderation(commands.Cog, name="Moderation"):
         if isinstance(error, commands.MissingPermissions):
             await ctx.send("```You don't have permision to do this```")
 
-def setup(bot: commands.Bot):
-    bot.add_cog(moderation(bot=bot))
-    print("moderation file is ready")
-
-#def setup(bot):
-#    bot.add_cog(moderation(bot))
-#    print("moderation file is loaded!")
+def setup(bot):
+    bot.add_cog(moderation(bot))
+    print("moderation file is loaded!")
