@@ -80,13 +80,16 @@ class moderation(commands.Cog, name="Moderation"):
 
     @clear.error
     async def clear_error(self, ctx, error):
+        fields = ("Links",f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot),<:supporter:775594205186883585>: [Support Server](https://discord.gg/PKP4mG6E3G)",False)
         if isinstance(error, commands.MissingRequiredArgument):
             EN = discord.Embed(description=f"{ctx.author.mention}, you have to  specify the amount of message to delete.")
-            EN.add_field(name="ㅤ", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
+            for name, value, inline in fields:
+                EN.add_field(name=name, value=value, inline=inline)
             await ctx.send(embed=EN)
         elif isinstance(error, commands.MissingPermissions):
             EP = discord.Embed(description=f"{ctx.author.mention}, you don't have the 'Manage Message' permision to use this command.")
-            EP.add_field(name="ㅤ", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot)")
+            for name, value, inline in fields:
+                EP.add_field(name=name, value=value, inline=inline)
             await ctx.send(embed=EP)
 
     #Embed
