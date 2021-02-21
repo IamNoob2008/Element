@@ -45,7 +45,6 @@ extensions = ['cogs.moderation',
 							'Utility.prefix',
 							'Utility.info',
 							'Utility.ping',
-              'Utility.ascii',
               'Extras.Chat',
               'Extras.source'
 ]
