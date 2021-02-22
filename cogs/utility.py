@@ -2,7 +2,7 @@ import discord
 import asyncio
 from discord.ext import commands
 
-class utility(commands.Cog, name="Utility"):
+class util(commands.Cog, name="Utility"):
     def __init__(self,bot):
         self.bot = bot
 
@@ -40,5 +40,5 @@ class utility(commands.Cog, name="Utility"):
 		await msg.edit(content = "",embed=embed)
 
 def setup(bot):
-    bot.add_cog(utility(bot))
+    bot.add_cog(util(bot))
     print("Utility file is loaded!")
