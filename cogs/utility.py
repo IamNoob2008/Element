@@ -3,19 +3,8 @@ import asyncio
 from discord.ext import commands
 
 class utility(commands.Cog, name="Utility"):
-	def __init__(self, bot):
-		self.bot = bot
-
-    #Ping
-
-	@commands.command(description="Check the latency of the bot")
-	async def ping(self, ctx):
-		msg = await ctx.send("Pinging <a:WindowsDotLoading:809471466311516211>")
-		await ctx.send(msg)
-		await asyncio.sleep(5)
-		embed = discord.Embed(title="Pong!",description=f"Your latency is {round(self.bot.latency * 1000)}ms",color=0x00FF00)
-		embed.add_field(name="Links", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot) | <:supporter:775594205186883585>: [Support Server](https://discord.gg/PKP4mG6E3G)", inline=False)
-		await msg.edit(content = "",embed=embed)
+    def __init__(self,bot):
+        self.bot = bot
 
     #User Avatar
 
@@ -38,6 +27,17 @@ class utility(commands.Cog, name="Utility"):
         embed.set_image(url=ctx.guild.icon_url)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
+
+    #Ping
+
+	@commands.command(description="Check the latency of the bot")
+	async def ping(self, ctx):
+		msg = await ctx.send("Pinging <a:WindowsDotLoading:809471466311516211>")
+		await ctx.send(msg)
+		await asyncio.sleep(5)
+		embed = discord.Embed(title="Pong!",description=f"Your latency is {round(self.bot.latency * 1000)}ms",color=0x00FF00)
+		embed.add_field(name="Links", value=f"<:DiscordBOT:801303572183777280>: [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=790832263260012573&permissions=8&scope=bot) | <:supporter:775594205186883585>: [Support Server](https://discord.gg/PKP4mG6E3G)", inline=False)
+		await msg.edit(content = "",embed=embed)
 
 def setup(bot):
     bot.add_cog(utility(bot))

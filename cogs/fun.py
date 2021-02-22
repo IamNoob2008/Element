@@ -79,7 +79,10 @@ class fun(commands.Cog, name="Fun"):
         if user is None:
             user = ctx.member.author
         embed = discord.Embed()
-
+        embed.add_field(name=user.name,value=f"[Download]({user.avatar_url})")
+        embed.set_image(url=user.avatar_url)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+        await ctx.send(embed=embed)
 def setup(bot):
     bot.add_cog(fun(bot))
-    print("fun file is loaded!")
+    print("Fun file is loaded!")
