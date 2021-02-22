@@ -77,11 +77,11 @@ class fun(commands.Cog, name="Fun"):
     @commands.command()
     async def wasted(self, ctx, *, user: discord.Member = None):
         if user is None:
-            user = ctx.member.author
+            user = ctx.author
         a = f"https://some-random-api.ml/canvas/wasted?avatar={ctx.user.avatarURL({ format: 'png'})}"
         embed = discord.Embed()
-        embed.add_field(name=user.name,value=f"[Download](https://some-random-api.ml/canvas/wasted?avatar={ctx.user.avatarURL({ format: 'png'})})")
-        embed.set_image(url=f"https://some-random-api.ml/canvas/wasted?avatar={ctx.user.avatarURL({ format: 'png'})}")
+        embed.add_field(name=user.name,value=f"[Download]({a})")
+        embed.set_image(url=a)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
