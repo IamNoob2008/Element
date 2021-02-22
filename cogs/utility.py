@@ -30,7 +30,7 @@ class utility(commands.Cog, name="Utility"):
 
     #Ping
 
-	@commands.command(description="Check the latency of the bot")
+	@commands.command()
 	async def ping(self, ctx):
 		msg = await ctx.send("Pinging <a:WindowsDotLoading:809471466311516211>")
 		await ctx.send(msg)
