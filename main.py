@@ -42,9 +42,8 @@ extensions = ['cogs.moderation',
               'cogs.fun',
 							'cogs.event',
               'cogs.info',
-							'Utility.avatar',
+              'cogs.utility',
 							'Utility.prefix',
-							'Utility.ping',
               'Extras.Chat',
               'Extras.source'
 ]

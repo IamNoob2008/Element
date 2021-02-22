@@ -72,6 +72,14 @@ class fun(commands.Cog, name="Fun"):
                     )
             await ctx.send(embed=embed)
 
+    #Wasted
+
+    @commands.command()
+    async def wasted(self, ctx, *, user: discord.Member = None):
+        if user is None:
+            user = ctx.member.author
+        embed = discord.Embed()
+
 def setup(bot):
     bot.add_cog(fun(bot))
     print("fun file is loaded!")
