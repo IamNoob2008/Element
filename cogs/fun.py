@@ -77,7 +77,7 @@ class fun(commands.Cog, name="Fun"):
     @commands.command()
     async def wasted(self, ctx, *, user: discord.Member = None):
         if user is None:
-            user = ctx.author
+            user = ctx.message.author
         a = f"https://some-random-api.ml/canvas/wasted?avatar={ctx.user.avatarURL({ format: 'png'})}"
         embed = discord.Embed()
         embed.add_field(name=user.name,value=f"[Download]({a})")
