@@ -6,7 +6,7 @@ class ping(commands.Cog, name="Utility"):
 	def __init__(self, bot):
 		self.bot = bot
 
-	@commands.command()
+	@commands.command(description="Check the latency of the bot")
 	async def ping(self, ctx):
 		msg = await ctx.send("Pinging <a:WindowsDotLoading:809471466311516211>")
 		await ctx.send(msg)
@@ -17,4 +17,4 @@ class ping(commands.Cog, name="Utility"):
 
 def setup(bot):
     bot.add_cog(ping(bot))
-    print("ping file is loaded!")
+    print("Ping file is loaded!")

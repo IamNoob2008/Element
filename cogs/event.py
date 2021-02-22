@@ -38,4 +38,4 @@ class event(commands.Cog, name="Events"):
 
 def setup(bot):
     bot.add_cog(event(bot))
-    print("event file is loaded!")
+    print("Event file is loaded!")

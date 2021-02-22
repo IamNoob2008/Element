@@ -107,4 +107,4 @@ class moderation(commands.Cog, name="Moderation"):
 
 def setup(bot):
     bot.add_cog(moderation(bot))
-    print("moderation file is loaded!")
+    print("Moderation file is loaded!")
