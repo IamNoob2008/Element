@@ -30,25 +30,24 @@ class api(commands.Cog, name="API"):
     #Colour
 
     @commands.command()
-    async def colour(self, ctx, *, args):
-        if args == 'random':
-            r = requests.get("http://www.colourlovers.com/api/colors/random")
-            res = r.json()
-            title = res['title']
-            unique_id = res['id']
-            hex_code = res['hex']
-            red = res['red']
-            green = res['green']
-            blue = res['blue']
-            image = res['imageUrl']
-            embed = discord.Embed(
-                title=f"About Colours"
-            )
-            embed.add_field(name=f"{title}", value=f"Unique ID:-{unique_id}")
-            embed.add_field(name="Hex Code", value=f"{hex_code}")
-            embed.add_field(name="RGB Breakdown", value=f"{hex_code}\nRGB Breckdown:-\nRed:- {red}\nGreen:- {green}\nBlue:- {blue}")
-            embed.set_image(url=image)
-            embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+    async def colour(self, ctx):
+        r = requests.get("http://www.colourlovers.com/api/colors/random")
+        res = r.json()
+        title = res['title']
+        unique_id = res['id']
+        hex_code = res['hex']
+        red = res['red']
+        green = res['green']
+        blue = res['blue']
+        image = res['imageUrl']
+        embed = discord.Embed(
+            title=f"About Colours"
+        )
+        embed.add_field(name=f"{title}", value=f"Unique ID:-{unique_id}")
+        embed.add_field(name="Hex Code", value=f"{hex_code}")
+        embed.add_field(name="RGB Breakdown", value=f"{hex_code}\nRGB Breckdown:-\nRed:- {red}\nGreen:- {green}\nBlue:- {blue}")
+        embed.set_image(url=image)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
 
     #Wasted
 
