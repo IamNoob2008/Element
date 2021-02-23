@@ -43,6 +43,7 @@ extensions = ['cogs.moderation',
               'cogs.help',
               'cogs.info',
               'cogs.utility',
+              'cogs.api',
 							'Utility.prefix',
               'Extras.Chat',
               'Extras.source'
