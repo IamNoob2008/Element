@@ -31,8 +31,8 @@ class api(commands.Cog, name="API"):
 
     @commands.command()
     async def colour(self, ctx):
-        r = requests.get("http://www.colourlovers.com/api/colors/random")
-        res = r.json()
+        c = requests.get("http://www.colourlovers.com/api/colors/random")
+        res = c.json()
         title = res['title']
         unique_id = res['id']
         hex_code = res['hex']
