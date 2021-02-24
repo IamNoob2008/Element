@@ -43,7 +43,7 @@ class api(commands.Cog, name="API"):
     async def wasted(self, ctx, *, user: discord.Member = None):
         if user is None:
             user = ctx.message.author
-        w = f"https://some-random-api.ml/canvas/wasted?avatar={user.avatar_url}"
+        w = f"https://some-random-api.ml/canvas/wasted?avatar={user.avatar_url(format='png')}"
         embed = discord.Embed()
         embed.set_image(url = w)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
