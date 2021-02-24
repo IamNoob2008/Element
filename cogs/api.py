@@ -49,6 +49,16 @@ class api(commands.Cog, name="API"):
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
+    #Say
+
+    @commands.command()
+    async def say(self, ctx, *, text):
+        s = (f"https://gdcolon.com/tools/gdtextbox/img/{text}?color=blue&name={ctx.author.name}&char=scratch")
+        embed = discord.Embed()
+        embed.set_image(url = s)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+        await ctx.send(embed=embed)
+
 def setup(bot):
     bot.add_cog(api(bot))
     print("API file is loaded!")
