@@ -43,7 +43,7 @@ class api(commands.Cog, name="API"):
     async def wasted(self, ctx, *, user: discord.Member = None):
         if user is None:
             user = ctx.message.author
-        w = f"https://some-random-api.ml/canvas/wasted?avatar={user.avatar_url(format='png')}"
+        w = f"https://some-random-api.ml/canvas/wasted?avatar={user.avatar_url}"
         embed = discord.Embed()
         embed.set_image(url = w)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
@@ -54,10 +54,7 @@ class api(commands.Cog, name="API"):
     @commands.command()
     async def say(self, ctx, *, text):
         s = (f"https://gdcolon.com/tools/gdtextbox/img/{text}?color=blue&name={ctx.author.name}&char=scratch")
-        embed = discord.Embed()
-        embed.set_image(url = s)
-        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
-        await ctx.send(embed=embed)
+        await ctx.send(s)
 
     #Comment
 
