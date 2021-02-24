@@ -27,27 +27,15 @@ class api(commands.Cog, name="API"):
         embed.set_footer(text=f"👍: {ups}, 👎: {downs}")
         await ctx.send(embed=embed)
 
-    #Colour
+    #Font
 
     @commands.command()
-    async def colour(self, ctx):
-        c = requests.get("http://www.colourlovers.com/api/colors/random")
-        res = c.json()
-        title = res['title']
-        unique_id = res['id']
-        hex_code = res['hex']
-        red = res['red']
-        green = res['green']
-        blue = res['blue']
-        image = res['imageUrl']
-        embed = discord.Embed(
-            title=f"About Colours"
-        )
-        embed.add_field(name=f"{title}", value=f"Unique ID:-{unique_id}")
-        embed.add_field(name="Hex Code", value=f"{hex_code}")
-        embed.add_field(name="RGB Breakdown", value=f"{hex_code}\nRGB Breckdown:-\nRed:- {red}\nGreen:- {green}\nBlue:- {blue}")
-        embed.set_image(url=image)
+    async def font(self, ctx, font, *, text):
+        f = (f"https://gdcolon.com/tools/gdfont/img/{text}?font={font}")
+        embed = discord.Embed()
+        embed.set_image(url = f)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+        await ctx.send(embed=embed)
 
     #Wasted
 
@@ -55,11 +43,9 @@ class api(commands.Cog, name="API"):
     async def wasted(self, ctx, *, user: discord.Member = None):
         if user is None:
             user = ctx.message.author
-        r = f"https://some-random-api.ml/canvas/wasted?avatar={user.avatar_url({ format: 'png'})}"
-        res = r.json()
+        w = f"https://some-random-api.ml/canvas/wasted?avatar={user.avatar_url}"
         embed = discord.Embed()
-        embed.add_field(name=user.name,value=f"[Download]({r})")
-        embed.set_image(url=r)
+        embed.set_image(url=w)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
         await ctx.send(embed=embed)
 
