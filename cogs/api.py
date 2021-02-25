@@ -33,7 +33,8 @@ class api(commands.Cog, name="API"):
     @commands.command()
     async def font(self, ctx, *, text):
         font = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-        f = (f"https://gdcolon.com/tools/gdfont/img/{text}?font={random.choice(font)}")
+        e = text.replace(' ','%20')
+        f = (f"https://gdcolon.com/tools/gdfont/img/{e}?font={random.choice(font)}")
         embed = discord.Embed()
         embed.set_image(url = f)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
@@ -63,7 +64,8 @@ class api(commands.Cog, name="API"):
 
     @commands.command()
     async def comment(self, ctx, *, text):
-        c = (f"https://gdcolon.com/tools/gdcomment/img/{text}?name={ctx.author.name}&likes={ctx.guild.member_count}&%=100&days=2-second&customIcon=https%3A%2F%2Fgdbrowser.com%2Ficon%2Ficon%3Ficon%3D30%26form%3Dcube%26col1%3D4%26col2%3D16")
+        e = text.replace(' ','%20')
+        c = (f"https://gdcolon.com/tools/gdcomment/img/{e}?name={ctx.author.name}&likes={ctx.guild.member_count}&%=100&days=2-second&customIcon=https%3A%2F%2Fgdbrowser.com%2Ficon%2Ficon%3Ficon%3D30%26form%3Dcube%26col1%3D4%26col2%3D16")
         await ctx.send(c)
 
 def setup(bot):
