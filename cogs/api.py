@@ -31,7 +31,7 @@ class api(commands.Cog, name="API"):
     #Font
 
     @commands.command()
-    async def font(self, ctx, font, *, text):
+    async def font(self, ctx, *, text):
         font = ["1","2","3","4","5","6","7","8","9","10","11","12"]
         f = (f"https://gdcolon.com/tools/gdfont/img/{text}?font={random.choice(font)}")
         embed = discord.Embed()
