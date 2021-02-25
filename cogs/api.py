@@ -55,8 +55,8 @@ class api(commands.Cog, name="API"):
 
     @commands.command()
     async def say(self, ctx, *, text):
-        text.replace(' ','%20')
-        s = (f"https://gdcolon.com/tools/gdtextbox/img/{text}?color=blue&name={ctx.author.name}&char=scratch")
+        e = text.replace(' ','%20')
+        s = (f"https://gdcolon.com/tools/gdtextbox/img/{e}?color=blue&name={ctx.author.name}&char=scratch")
         await ctx.send(s)
 
     #Comment
