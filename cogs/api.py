@@ -26,6 +26,7 @@ class api(commands.Cog, name="API"):
         )
         embed.set_image(url=res['image'])
         embed.set_footer(text=f"👍: {ups}, 👎: {downs}")
+        await ctx.channel.purge(limit=1)
         await ctx.send(embed=embed)
 
     #Font
@@ -38,6 +39,7 @@ class api(commands.Cog, name="API"):
         embed = discord.Embed()
         embed.set_image(url = f)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+        await ctx.channel.purge(limit=1)
         await ctx.send(embed=embed)
 
     #Wasted
@@ -58,6 +60,7 @@ class api(commands.Cog, name="API"):
     async def say(self, ctx, *, text):
         e = text.replace(' ','%20')
         s = (f"https://gdcolon.com/tools/gdtextbox/img/{e}?color=blue&name={ctx.author.name}&char=scratch")
+        await ctx.channel.purge(limit=1)
         await ctx.send(s)
 
     #Comment
@@ -66,6 +69,7 @@ class api(commands.Cog, name="API"):
     async def comment(self, ctx, *, text):
         e = text.replace(' ','%20')
         c = (f"https://gdcolon.com/tools/gdcomment/img/{e}?name={ctx.author.name}&likes={ctx.guild.member_count}&%=100&days=2-second&customIcon=https%3A%2F%2Fgdbrowser.com%2Ficon%2Ficon%3Ficon%3D30%26form%3Dcube%26col1%3D4%26col2%3D16")
+        await ctx.channel.purge(limit=1)
         await ctx.send(c)
 
 def setup(bot):
