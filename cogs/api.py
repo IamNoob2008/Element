@@ -1,5 +1,6 @@
 import discord
 import requests
+import random
 import json
 from discord.ext import commands
 
@@ -31,7 +32,8 @@ class api(commands.Cog, name="API"):
 
     @commands.command()
     async def font(self, ctx, font, *, text):
-        f = (f"https://gdcolon.com/tools/gdfont/img/{text}?font={font}")
+        font = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+        f = (f"https://gdcolon.com/tools/gdfont/img/{text}?font={random.choice(font)}")
         embed = discord.Embed()
         embed.set_image(url = f)
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
@@ -53,6 +55,7 @@ class api(commands.Cog, name="API"):
 
     @commands.command()
     async def say(self, ctx, *, text):
+        text.replace(' ','%20')
         s = (f"https://gdcolon.com/tools/gdtextbox/img/{text}?color=blue&name={ctx.author.name}&char=scratch")
         await ctx.send(s)
 
