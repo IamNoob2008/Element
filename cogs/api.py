@@ -57,7 +57,8 @@ class api(commands.Cog, name="API"):
     @commands.command()
     async def say(self, ctx, *, text):
         e = text.replace(' ','%20')
-        s = (f"https://gdcolon.com/tools/gdtextbox/img/{e}?color=blue&name={ctx.author.name}&char=scratch")
+        m = ctx.author.name.replace(' ','%20')
+        s = (f"https://gdcolon.com/tools/gdtextbox/img/{e}?color=blue&name={m}&char=scratch")
         await ctx.send(s)
 
     #Comment
@@ -65,7 +66,8 @@ class api(commands.Cog, name="API"):
     @commands.command()
     async def comment(self, ctx, *, text):
         e = text.replace(' ','%20')
-        c = (f"https://gdcolon.com/tools/gdcomment/img/{e}?name={ctx.author.name}&likes={ctx.guild.member_count}&%=100&days=2-second&customIcon=https%3A%2F%2Fgdbrowser.com%2Ficon%2Ficon%3Ficon%3D30%26form%3Dcube%26col1%3D4%26col2%3D16")
+        m = ctx.author.name.replace(' ','%20')
+        c = (f"https://gdcolon.com/tools/gdcomment/img/{e}?name={m}&likes={ctx.guild.member_count}&%=100&days=2-second&customIcon=https%3A%2F%2Fgdbrowser.com%2Ficon%2Ficon%3Ficon%3D30%26form%3Dcube%26col1%3D4%26col2%3D16")
         await ctx.send(c)
 
 def setup(bot):
