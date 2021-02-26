@@ -7,6 +7,10 @@ class Chat(commands.Cog, name="Extras"):
         self.bot = bot
 
     @commands.Cog.listener()
+    async def on_ready(self):
+        print("chat file is loaded")
+
+    @commands.Cog.listener()
     async def on_message(self, message):
         if message.content == "??":
             await message.channel.send(f"{message.author.name} didn't understand what you told!")
@@ -16,9 +20,8 @@ class Chat(commands.Cog, name="Extras"):
             await message.channel.send(f"Hi {message.author.name}, welcome to the chat!")
         elif message.content == "dead chat":
             await message.channel.send(f"{message.author.name}, if it is dead chat then why are you chatting here!")
-        elif message.contain("@RSGameTech#9977"):
+        elif message.contain("<@699566190842085439>"):
             await message.channel.send(f":expressionless:")
 
 def setup(bot):
     bot.add_cog(Chat(bot))
-    print("Chat file is loaded!")
