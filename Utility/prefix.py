@@ -20,3 +20,4 @@ class prefix(commands.Cog, name="Settings"):
 def setup(bot):
     bot.add_cog(prefix(bot))
     print("prefix file is loaded!")
+		

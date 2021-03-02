@@ -21,7 +21,7 @@ class api(commands.Cog, name="API"):
         sub = res['subreddit']
         author = res['author']
         embed = discord.Embed(
-            title=f"{title}\nAuthor: {author}\nSubreddit: {sub}",
+            title=f" {title}\nAuthor: {author}\nSubreddit: {sub}",
             color=0xADD8E6
         )
         embed.set_image(url=res['image'])
@@ -44,8 +44,13 @@ class api(commands.Cog, name="API"):
 
     @commands.command()
     async def wasted(self, ctx, *, user: discord.Member = None):
-        if user is None:
-            user = ctx.message.author
+      """makes wasted image
+      parameters -
+        • user 
+          it is optional, if you don't mention then it will take your avatar
+      """
+      if user is None:
+        user = ctx.message.author
         w = f"https://some-random-api.ml/canvas/wasted?avatar={user.avatar_url}"
         embed = discord.Embed()
         embed.set_image(url = w)

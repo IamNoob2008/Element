@@ -22,7 +22,7 @@ class Chat(commands.Cog, name="Extras"):
         elif message.content == "dead chat":
             await message.channel.send(f"{message.author.name}, if it is dead chat then why are you chatting here!")
         elif "<@699566190842085439>" in message.content:
-          r = [":expressionless:","<:lvt_tajupset_tom:781488063544426507>"]
+          r = [":expressionless:",":rolling_eyes:"]
           await message.channel.send(random.choice(r))
 
 def setup(bot):

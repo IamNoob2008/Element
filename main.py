@@ -37,13 +37,16 @@ async def on_ready():
 async def change_status():
   await bot.change_presence(activity=discord.Game(next(status)))
 
-extensions = ['cogs.moderation',
+bot.owner_ids=[699566190842085439, 730454267533459568]
+
+extensions = ['cogs.GWR_works.mod',
+              'cogs.GWR_works.animation'
               'cogs.fun',
+              'cogs.animation',
 							'cogs.event',
               'cogs.info',
               'cogs.utility',
               'cogs.api',
-							'Utility.prefix',
               'Extras.Chat',
               'Extras.source'
 ]
